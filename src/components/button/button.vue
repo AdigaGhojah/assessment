@@ -58,8 +58,7 @@ export default {
 }
 @media only screen and (max-width: 767.5px) {
   .btn {
-    width: 90px;
-    padding:0;
+    padding:0 24px;
     font-size: 14px;
     line-height: 48px;
     border-radius: 24px;

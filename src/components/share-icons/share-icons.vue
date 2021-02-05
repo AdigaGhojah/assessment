@@ -29,8 +29,6 @@ export default {
 <style scoped>
 span {
   width: 100%;
-  display: block;
-  order: 0;
   margin-bottom: 20px;
   font-weight: bold;
   font-size: 15px;
@@ -106,10 +104,40 @@ span {
 
   border: 2px solid #41ead4;
 }
+@media only screen and (max-width: 1440px) {
+  span {
+    text-align: right;
+  }
+  .share-page.horizontal {
+    padding-right: 16px;
+  }
+  .share-page,
+  .share-page.horizontal {
+    right: 16px;
+    justify-content: flex-end;
+  }
+  .share-page.horizontal::after {
+    right: 0;
+  }
+
+}
 @media only screen and (max-width: 767.5px) {
   .share-page {
     bottom: 5px;
-    right: 16px;
   }
+  .share-page.horizontal {
+    position: relative;
+    bottom:0;
+    justify-content: center;
+    margin-top:16px;
+    padding-right: 0;
+    right: unset;
+  }
+  span{
+    text-align: center;
+  }
+  .share-page.horizontal::after {
+    right:unset;
+  } 
 }
 </style>

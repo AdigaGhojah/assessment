@@ -18,8 +18,8 @@
         </p>
       </section>
       <!-- End Main Text -->
-      <shareIcons cClass="flex-column space-bottom"/>
-      <span class="scroll">SCROLL</span>
+      <shareIcons cClass="flex-column space-bottom" />
+      <span v-show="!scrolled" class="scroll">SCROLL</span>
     </div>
   </div>
 </template>
@@ -28,12 +28,41 @@
 import cHeader from "../header/header.vue";
 import shareIcons from "../share-icons/share-icons.vue";
 export default {
-  props: {
-    msg: String,
-  },
   components: {
     cHeader,
     shareIcons,
+  },
+  data() {
+    return {
+      limitPosition: 50,
+      scrolled: false,
+      lastPosition: 0,
+    };
+  },
+  methods: {
+    handleScroll() {
+      if (
+        this.lastPosition < window.scrollY &&
+        this.limitPosition < window.scrollY
+      ) {
+        this.scrolled = true;
+      }
+
+      if (
+        this.lastPosition > window.scrollY &&
+        this.limitPosition > window.scrollY
+      ) {
+        this.scrolled = false;
+      }
+
+      this.lastPosition = window.scrollY;
+    },
+  },
+  created() {
+    window.addEventListener("scroll", this.handleScroll);
+  },
+  destroyed() {
+    window.removeEventListener("scroll", this.handleScroll);
   },
 };
 </script>
@@ -87,7 +116,6 @@ h1 {
   line-height: 153px;
   letter-spacing: -0.02em;
   margin: 0 0 16px;
-
 }
 .sub-title {
   font-weight: bold;
@@ -103,7 +131,6 @@ h1 {
   font-size: 17px;
   line-height: 150%;
   margin: 0;
-
 }
 .scroll {
   /* bottom: 16px; */
@@ -115,8 +142,19 @@ h1 {
   display: inline-block;
   letter-spacing: 0.05em;
   z-index: 1;
-
+  animation: animation 1s infinite;
   position: relative;
+}
+@keyframes animation {
+  0% {
+    bottom: 256px;
+  }
+  50% {
+    bottom: 265px;
+  }
+  100% {
+    bottom: 256px;
+  }
 }
 .scroll::after {
   content: "";
@@ -137,8 +175,8 @@ h1 {
     background-position: center;
   }
   .main-text {
-    height: calc(100% - (82px + 100px + 100px));
-    padding-top: 100px;
+    height: calc(100% - (82px + 40px + 100px));
+    padding-top: 50px;
   }
 
   h1 {
@@ -162,6 +200,18 @@ h1 {
     left: -28px;
     height: 40px;
   }
-
+}
+@media only screen and (max-width: 450px) {
+@keyframes animation {
+  0% {
+    bottom: 235px;
+  }
+  50% {
+    bottom: 250px;
+  }
+  100% {
+    bottom: 235px;
+  }
+}
 }
 </style>

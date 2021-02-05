@@ -57,6 +57,9 @@ body {
   font-display: swap;
 }
 
+.flex-wrap{
+  flex-wrap: wrap;
+}
 .space-between {
   justify-content: space-between;
 }

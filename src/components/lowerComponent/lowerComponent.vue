@@ -1,7 +1,7 @@
 <template>
   <div id="lowerPart">
     <div class="container">
-      <div class="d-flex align-center">
+      <div class="d-flex align-center flex-wrap">
         <h3 class="section-title">Pick your trip</h3>
         <p class="sub-title">
           Our team put together some trips to you to discover, feel free to
@@ -47,14 +47,14 @@
           />
         </div>
       </div>
-      <share-icons cClass="horizontal" :showText="true"/>
+      <share-icons cClass="horizontal" :showText="true" />
     </div>
   </div>
 </template>
 
 <script>
 import cButton from "../button/button.vue";
-import ShareIcons from '../share-icons/share-icons.vue';
+import ShareIcons from "../share-icons/share-icons.vue";
 export default {
   components: {
     cButton,
@@ -65,6 +65,11 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+@media only screen and (min-width: 1920.5px) {
+  #lowerPart::after {
+    background-size: cover;
+  }
+}
 #lowerPart {
   width: 100%;
   position: relative;
@@ -77,7 +82,6 @@ export default {
   height: fill-available;
   top: 0;
   position: absolute;
-  /* background-image: url(/img/bg-lights.a643be40.svg); */
   background-image: url("~@/assets/imgs/bg-lights.svg");
   display: block;
   margin-top: -260px;
@@ -241,7 +245,7 @@ export default {
   height: 12px;
   border-top: 2px solid #41ead4;
   border-left: 2px solid #41ead4;
-  margin-top:-16px;
+  margin-top: -16px;
 }
 .img-number {
   font-weight: 800;
@@ -257,5 +261,93 @@ export default {
   font-size: 24px;
   line-height: 150%;
   letter-spacing: 0.15em;
+}
+@media only screen and (max-width: 1440px) {
+  .trip-card {
+    justify-content: center;
+    max-width: 100%;
+  }
+  .img-container {
+    margin-right: 75px;
+    max-width: 375px;
+  }
+  .trip-title {
+    font-size: 40px;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .trip-card {
+    flex-direction: column;
+    align-items: center;
+  }
+  .img-container {
+    margin-right: 0;
+  }
+  .section-title {
+    margin: 0 0 10px 0;
+    font-size: 56px;
+    width: 100%;
+  }
+  .sub-title {
+    margin-left: auto;
+  }
+  .sub-title::before,
+  .sub-title::after {
+    display: none;
+  }
+  .info-container {
+    margin-top: 56px;
+  }
+  .buttons-container {
+    bottom: 4px;
+  }
+  .img-controllers {
+    width: 48px;
+    height: 48px;
+  }
+}
+@media only screen and (max-width: 767.5px) {
+  #lowerPart {
+    background-size: cover;
+    padding-bottom: 50px;
+  }
+  .tabs {
+    margin: 40px 0 75px;
+  }
+  .tab {
+    padding-bottom: 16px;
+  }
+  .img-number,
+  .img-title {
+    font-size: 16px;
+  }
+  .img-brief {
+    transform: translate(53%, -50%);
+  }
+  .img-brief::before {
+    width: 95px;
+    height: 6px;
+    margin-top: -8px;
+  }
+  .img-container::after {
+    width: 115px;
+    height: 115px;
+  }
+}
+@media only screen and (max-width: 450px) {
+  .info-container .btn {
+    display: block;
+  }
+  .img-container {
+    max-width: 90%;
+  }
+  .section-title {
+    font-size: 48px;
+  }
+  .tab{
+    letter-spacing: normal;
+    font-size: 16px;
+    font-weight: normal;
+  }
 }
 </style>

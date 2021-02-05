@@ -47,15 +47,18 @@
           />
         </div>
       </div>
+      <share-icons cClass="horizontal" :showText="true"/>
     </div>
   </div>
 </template>
 
 <script>
 import cButton from "../button/button.vue";
+import ShareIcons from '../share-icons/share-icons.vue';
 export default {
   components: {
     cButton,
+    ShareIcons,
   },
 };
 </script>

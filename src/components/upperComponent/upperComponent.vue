@@ -18,16 +18,7 @@
         </p>
       </section>
       <!-- End Main Text -->
-
-      <div class="share-page d-flex flex-column align-center">
-        <a href="#" title="twitter"
-          ><img src="@/assets/imgs/twitter.svg" alt="twitter"
-        /></a>
-        <a href="#" title="instagram"><span class="instagram"></span></a>
-        <a href="#" title="facebook"
-          ><img src="@/assets/imgs/facebook.svg" alt="facebook"
-        /></a>
-      </div>
+      <shareIcons cClass="flex-column space-bottom"/>
       <span class="scroll">SCROLL</span>
     </div>
   </div>
@@ -35,12 +26,14 @@
 
 <script>
 import cHeader from "../header/header.vue";
+import shareIcons from "../share-icons/share-icons.vue";
 export default {
   props: {
     msg: String,
   },
   components: {
     cHeader,
+    shareIcons,
   },
 };
 </script>
@@ -138,45 +131,7 @@ h1 {
   background: linear-gradient(180deg, #09f4f4 0%, #00c9e0 100%);
   border-radius: 13px;
 }
-.share-page {
-  position: absolute;
-  right: 0;
-  bottom: 240px;
-  z-index: 1;
-}
-.instagram {
-  margin: 18px 0;
-  display: inline-block;
-  position: relative;
-  width: 20px;
-  height: 20px;
-}
-.instagram::before {
-  content: "";
 
-  width: 18px;
-  height: 18px;
-  display: inline-block;
-  position: absolute;
-  border-radius: 6px;
-  right: 0;
-  top: 0;
-  border: 2px solid #41ead4;
-}
-.instagram::after {
-  content: "";
-  border-radius: 50%;
-  position: absolute;
-  width: 6px;
-  height: 6px;
-  right: 50%;
-  top: 50%;
-  margin-right: -4px;
-  margin-top: -4px;
-  display: inline-block;
-
-  border: 2px solid #41ead4;
-}
 @media only screen and (max-width: 767.5px) {
   #upperPart {
     background-position: center;
@@ -207,9 +162,6 @@ h1 {
     left: -28px;
     height: 40px;
   }
-  .share-page {
-    bottom: 5px;
-    right: 16px;
-  }
+
 }
 </style>

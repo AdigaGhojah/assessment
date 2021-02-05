@@ -1,10 +1,9 @@
 <template>
   <div id="upperPart">
-    <!-- <h1>{{ msg }}</h1> -->
-    <!-- Start Header -->
     <div class="container">
-      <!-- End Header -->
+      <!-- Start Header -->
       <cHeader />
+      <!-- End Header -->
       <!-- Start Main Text -->
       <section class="main-text d-flex align-center flex-column">
         <h1>Night Trips</h1>
@@ -57,7 +56,23 @@ export default {
   background-image: url("~@/assets/imgs/background.png");
   background-repeat: no-repeat;
   width: 100%;
-  height: 100vh;
+  height: calc(100vh + 232px);
+  position: relative;
+}
+#upperPart::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  max-height: 378px;
+  bottom: 0;
+  height: 100%;
+
+  background: linear-gradient(
+    180deg,
+    rgba(1, 22, 39, 0) 0%,
+    #011627 76.64%,
+    #011627 100%
+  );
 }
 
 .container {
@@ -74,47 +89,40 @@ export default {
   text-align: center;
 }
 h1 {
-  font-family: Noe Display;
+  font-family: "Noe Display";
   font-size: 120px;
   line-height: 153px;
   letter-spacing: -0.02em;
   margin: 0 0 16px;
-  color: #fff;
+
 }
 .sub-title {
-  font-family: Larsseit;
   font-weight: bold;
   font-size: 18px;
   line-height: 24px;
   /* identical to box height */
-
   letter-spacing: 0.1em;
 
-  color: #fff;
   margin-bottom: 50px;
 }
 .brief {
   max-width: 643px;
-  font-family: Larsseit;
   font-size: 17px;
   line-height: 150%;
   margin: 0;
 
-  color: #fff;
 }
 .scroll {
-  bottom: 16px;
+  /* bottom: 16px; */
+  bottom: 256px;
   left: -24px;
-
-  font-family: Larsseit;
-  font-weight: bold;
   font-size: 15px;
   line-height: 190%;
   transform: rotate(-90deg);
   display: inline-block;
   letter-spacing: 0.05em;
+  z-index: 1;
 
-  color: #fff;
   position: relative;
 }
 .scroll::after {
@@ -131,11 +139,10 @@ h1 {
   border-radius: 13px;
 }
 .share-page {
-  /* margin-right: 0;
-  width: fit-content;
-  margin-left: auto; */
   position: absolute;
   right: 0;
+  bottom: 240px;
+  z-index: 1;
 }
 .instagram {
   margin: 18px 0;

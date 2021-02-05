@@ -10,15 +10,18 @@
       <button class="search-button">
         <img src="@/assets/imgs/search-icon.svg" alt="search-icon" />
       </button>
-      <button class="menu-btn">MENU</button>
+      <c-button buttonText="MENU"/>
     </div>
     <!-- End Header Right Side-->
   </header>
 </template>
 
 <script>
+import cButton from "../button/button.vue";
 export default {
-  
+    components: {
+    cButton,
+  },
 };
 </script>
 
@@ -50,13 +53,10 @@ header {
   font-weight: bold;
   font-size: 16px;
   line-height: 60px;
-
   letter-spacing: 0.1em;
-  color: #fff;
-
   background-color: #00c9e0;
-  /* Button Shadow */
-
+  font-family: "Larsseit";
+  color: #fff;
   box-shadow: 5px 15px 40px rgba(0, 201, 224, 0.2);
   border-radius: 48px;
   text-align: center;

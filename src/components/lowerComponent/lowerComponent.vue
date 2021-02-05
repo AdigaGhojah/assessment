@@ -285,7 +285,7 @@ export default {
 }
 .img-title {
   display: inline-block;
-  max-width: 204px;
+  max-width: 215px;
   font-weight: bold;
   font-size: 24px;
   line-height: 150%;

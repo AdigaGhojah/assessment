@@ -1,0 +1,74 @@
+[
+    {
+        "id": 0,
+        "tripName": "Chill Adventure",
+        "tripDescription1": "Ornare vivamus molestie pellentesque nunc. Sed sapien erat ultrices curabitur. Erat id fringilla arcu condimentum fames.",
+        "tripDescription2": "Aliquet dictum aliquet faucibus cursus turpis. Suspendisse cum rutrum sit ut sociis. Pellentesque neque orci adipiscing pharetra lacus, dignissim pharetra ipsum blandit. Feugiat quis quam consectetur lectus id quis tortor vel, mattis.",
+        "images": [
+            {
+                "imageName": "dummy-1.png",
+                "imageTitle": "GRAND DUNES LANDSCAPE",
+                "imageNumber": "01."
+            },
+            {
+                "imageName": "dummy-2.jpg",
+                "imageTitle": "GRAND DUNES LANDSCAPE",
+                "imageNumber": "02."
+            }
+        ]
+    },
+    {
+        "id": 1,
+        "tripName": "Spooky Times",
+        "tripDescription1": "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+        "tripDescription2": "Veritatis maxime, corporis iure repellat nesciunt animi voluptatem expedita repudiandae eligendi obcaecati consequatur iste eveniet autem officiis pariatur porro quam necessitatibus natus.",
+        "images": [
+            {
+                "imageName": "dummy-3.jpg",
+                "imageTitle": "GRAND DUNES LANDSCAPE",
+                "imageNumber": "01."
+            },
+            {
+                "imageName": "dummy-4.jpg",
+                "imageTitle": "GRAND DUNES LANDSCAPE",
+                "imageNumber": "02."
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "tripName": "Desert Madness",
+        "tripDescription1": "Ornare vivamus molestie pellentesque nunc. Sed sapien erat ultrices curabitur. Erat id fringilla arcu condimentum fames.",
+        "tripDescription2": "Aliquet dictum aliquet faucibus cursus turpis. Suspendisse cum rutrum sit ut sociis. Pellentesque neque orci adipiscing pharetra lacus, dignissim pharetra ipsum blandit. Feugiat quis quam consectetur lectus id quis tortor vel, mattis.",
+        "images": [
+            {
+                "imageName": "dummy-5.jpg",
+                "imageTitle": "GRAND DUNES LANDSCAPE",
+                "imageNumber": "01."
+            },
+            {
+                "imageName": "dummy-6.jpg",
+                "imageTitle": "GRAND DUNES LANDSCAPE",
+                "imageNumber": "02."
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "tripName": "Out in the wild",
+        "tripDescription1": "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+        "tripDescription2": "Veritatis maxime, corporis iure repellat nesciunt animi voluptatem expedita repudiandae eligendi obcaecati consequatur iste eveniet autem officiis pariatur porro quam necessitatibus natus.",
+        "images": [
+            {
+                "imageName": "dummy-7.jpg",
+                "imageTitle": "GRAND DUNES LANDSCAPE",
+                "imageNumber": "01."
+            },
+            {
+                "imageName": "dummy-8.jpg",
+                "imageTitle": "GRAND DUNES LANDSCAPE",
+                "imageNumber": "02."
+            }
+        ]
+    }
+]

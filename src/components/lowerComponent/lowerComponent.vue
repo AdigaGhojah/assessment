@@ -8,38 +8,37 @@
           discover each of them.
         </p>
       </div>
-      <ul class="tabs d-flex space-between">
-        <li class="tab active">Chill Adventure</li>
-        <li class="tab">Spooky Times</li>
-        <li class="tab">Desert Madness</li>
-        <li class="tab">Out in the wild</li>
-      </ul>
+      <tabs :trips="myTrips" @sendActiveTrip="setCurrentTrip($event)" />
       <div class="trip-card d-flex space-between">
         <div class="img-container">
-          <img src="@/assets/imgs/dummy-1.png" alt="" />
+          <img :src="getImgUrl(currentTrip.images[index].imageName)" alt="" />
           <div class="buttons-container d-flex">
-            <button class="img-controllers arrow-left"></button>
-            <button class="img-controllers arrow-right"></button>
+            <button
+              @click="changeSlide('prev')"
+              class="img-controllers arrow-left"
+            ></button>
+            <button
+              @click="changeSlide('next')"
+              class="img-controllers arrow-right"
+            ></button>
           </div>
           <div class="img-brief d-flex flex-column">
-            <span class="img-number">01.</span>
-            <span class="img-title">GRAND DUNES LANDSCAPE</span>
+            <span class="img-number">{{
+              currentTrip.images[index].imageNumber
+            }}</span>
+            <span class="img-title">{{
+              currentTrip.images[index].imageTitle
+            }}</span>
           </div>
         </div>
         <div class="info-container">
-          <h2 class="trip-title">Chill Adventure</h2>
+          <h2 class="trip-title">{{ currentTrip.tripName }}</h2>
           <p class="trip-description">
-            <b>
-              Ornare vivamus molestie pellentesque nunc. Sed sapien erat
-              ultrices curabitur. Erat id fringilla arcu condimentum fames.</b
-            >
+            <b> {{ currentTrip.tripDescription1 }}</b>
           </p>
           <br />
           <p class="trip-description">
-            Aliquet dictum aliquet faucibus cursus turpis. Suspendisse cum
-            rutrum sit ut sociis. Pellentesque neque orci adipiscing pharetra
-            lacus, dignissim pharetra ipsum blandit. Feugiat quis quam
-            consectetur lectus id quis tortor vel, mattis.
+            {{ currentTrip.tripDescription2 }}
           </p>
           <c-button
             buttonText="SEE OUR LATEST OFFER"
@@ -55,10 +54,60 @@
 <script>
 import cButton from "../button/button.vue";
 import ShareIcons from "../share-icons/share-icons.vue";
+import tabs from "../tabs/tabs.vue";
+
+import json from "../../trips.json";
+
 export default {
   components: {
     cButton,
     ShareIcons,
+    tabs,
+  },
+  data() {
+    return {
+      myTrips: json,
+      index: 0,
+      currentTrip: {
+        id: 0,
+        tripName: "Chill Adventure",
+        tripDescription1:
+          "Ornare vivamus molestie pellentesque nunc. Sed sapien erat ultrices curabitur. Erat id fringilla arcu condimentum fames.",
+        tripDescription2:
+          "Aliquet dictum aliquet faucibus cursus turpis. Suspendisse cum rutrum sit ut sociis. Pellentesque neque orci adipiscing pharetra lacus, dignissim pharetra ipsum blandit. Feugiat quis quam consectetur lectus id quis tortor vel, mattis.",
+        images: [
+          {
+            imageName: "dummy-1.png",
+            imageTitle: "GRAND DUNES LANDSCAPE",
+            imageNumber: "01.",
+          },
+          {
+            imageName: "dummy-2.jpg",
+            imageTitle: "GRAND DUNES LANDSCAPE",
+            imageNumber: "02.",
+          },
+        ],
+      },
+    };
+  },
+  methods: {
+    setCurrentTrip(index) {
+      this.currentTrip !== this.myTrips[index] ? (this.index = 0) : "";
+      this.currentTrip = this.myTrips[index];
+    },
+    getImgUrl(pic) {
+      return require("../../assets/imgs/" + pic);
+    },
+    changeSlide(direction) {
+      if (direction === "prev" && this.index > 0) {
+        this.index--;
+      } else if (
+        direction === "next" &&
+        this.index < this.currentTrip.images.length - 1
+      ) {
+        this.index++;
+      }
+    },
   },
 };
 </script>
@@ -133,30 +182,10 @@ export default {
   list-style-type: none;
   padding-left: 0;
 }
-.tab {
-  max-width: 282px;
-  width: 100%;
-  font-weight: bold;
-  font-size: 16px;
-  line-height: 110%;
-  text-align: center;
-  letter-spacing: 0.08em;
-  color: #fff;
-  opacity: 0.5;
-  padding-bottom: 37px;
-}
-.tab:hover {
-  cursor: pointer;
-  color: #41ead4;
-  opacity: 1;
-}
-.tab.active {
-  color: #41ead4;
-  opacity: 1;
-  border-bottom: 4px solid #41ead4;
-}
+
 .img-container {
   max-width: 486px;
+  max-height: 472px;
   width: 100%;
   position: relative;
   border-radius: 10px;
@@ -311,12 +340,6 @@ export default {
     background-size: cover;
     padding-bottom: 50px;
   }
-  .tabs {
-    margin: 40px 0 75px;
-  }
-  .tab {
-    padding-bottom: 16px;
-  }
   .img-number,
   .img-title {
     font-size: 16px;
@@ -343,11 +366,6 @@ export default {
   }
   .section-title {
     font-size: 48px;
-  }
-  .tab{
-    letter-spacing: normal;
-    font-size: 16px;
-    font-weight: normal;
   }
 }
 </style>

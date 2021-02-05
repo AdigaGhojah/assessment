@@ -7,7 +7,7 @@
 
 <script>
 import HelloWorld from "./components/HelloWorld.vue";
-import upperComponent from "./components/upperComponent.vue";
+import upperComponent from "./components/upperComponent/upperComponent.vue";
 
 export default {
   name: "App",

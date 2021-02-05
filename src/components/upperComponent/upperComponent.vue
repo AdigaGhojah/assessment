@@ -3,23 +3,8 @@
     <!-- <h1>{{ msg }}</h1> -->
     <!-- Start Header -->
     <div class="container">
-      <header class="d-flex align-center space-between">
-        <!-- Start Logo -->
-        <a href="/" title="logo">
-          <img src="@/assets/imgs/logo.svg" alt="logo" />
-        </a>
-        <!-- End Logo -->
-        <!-- Start Header Right Side-->
-        <div class="d-flex align-center">
-          <button class="search-button">
-            <img src="@/assets/imgs/search-icon.svg" alt="search-icon" />
-          </button>
-          <button class="menu-btn">MENU</button>
-        </div>
-        <!-- End Header Right Side-->
-      </header>
       <!-- End Header -->
-
+      <cHeader />
       <!-- Start Main Text -->
       <section class="main-text d-flex align-center flex-column">
         <h1>Night Trips</h1>
@@ -50,26 +35,31 @@
 </template>
 
 <script>
+import cHeader from "../header/header.vue";
 export default {
-  name: "HelloWorld",
   props: {
     msg: String,
+  },
+  components: {
+    cHeader,
   },
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+@media only screen and (min-width: 1920.5px) {
+  #upperPart {
+    background-size: contain;
+  }
+}
 #upperPart {
   background-image: url("~@/assets/imgs/background.png");
   background-repeat: no-repeat;
   width: 100%;
   height: 100vh;
 }
-header {
-  padding-top: 77px;
-  padding-right: 9px;
-}
+
 .container {
   max-width: 1413px;
   height: 100%;
@@ -77,61 +67,7 @@ header {
   margin: 0 auto;
   position: relative;
 }
-.search-button {
-  cursor: pointer;
-  margin-right: 35px;
-  width: 32px;
-  height: 32px;
-  padding: 8px;
-  border-radius: 50%;
-  border: 0;
-  background-color: transparent;
-  transition: all 0.3s;
-}
-.search-button:hover {
-  width: 35px;
-  height: 35px;
-  background-color: rgba(110, 110, 110, 0.5);
-}
-.menu-btn {
-  border: 0;
-  cursor: pointer;
-  width: 167px;
-  font-family: Larsseit;
-  font-weight: bold;
-  font-size: 16px;
-  line-height: 60px;
 
-  letter-spacing: 0.1em;
-  color: #fff;
-
-  background-color: #00c9e0;
-  /* Button Shadow */
-
-  box-shadow: 5px 15px 40px rgba(0, 201, 224, 0.2);
-  border-radius: 48px;
-  text-align: center;
-  position: relative;
-  transition: background-color 0.3s;
-}
-.menu-btn:hover {
-  background-color: #00b0c4;
-}
-.menu-btn:hover::after {
-  right: 0;
-}
-.menu-btn::after {
-  content: "";
-  position: absolute;
-  width: 30px;
-  height: 2px;
-  top: 50%;
-  margin-top: -1px;
-  right: -15px;
-  transition: right 0.3s;
-  background-color: #fff;
-  border-radius: 16px;
-}
 .main-text {
   height: calc(100% - 419px);
   padding-top: 152px;
@@ -211,11 +147,11 @@ h1 {
 .instagram::before {
   content: "";
 
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
   display: inline-block;
   position: absolute;
-  border-radius: 4px;
+  border-radius: 6px;
   right: 0;
   top: 0;
   border: 2px solid #41ead4;
@@ -224,8 +160,8 @@ h1 {
   content: "";
   border-radius: 50%;
   position: absolute;
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
   right: 50%;
   top: 50%;
   margin-right: -4px;
@@ -236,24 +172,7 @@ h1 {
 }
 @media only screen and (max-width: 767.5px) {
   #upperPart {
-background-position: center;
-}
-  header {
-    padding-top: 32px;
-    padding-right: 0px;
-  }
-  .search-button {
-    margin-right: 16px;
-  }
-  .menu-btn {
-    width: 90px;
-    font-size: 14px;
-    line-height: 48px;
-    border-radius: 24px;
-  }
-  .menu-btn::after {
-    width: 16px;
-    right: -8px;
+    background-position: center;
   }
   .main-text {
     height: calc(100% - (82px + 100px + 100px));
@@ -283,7 +202,7 @@ background-position: center;
   }
   .share-page {
     bottom: 5px;
-    right:16px;
+    right: 16px;
   }
 }
 </style>

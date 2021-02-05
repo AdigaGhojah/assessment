@@ -1,12 +1,18 @@
 <template>
-  <a class="btn">{{ buttonText }}</a>
+  <a class="btn" :style="style">{{ buttonText }}</a>
 </template>
 
 <script>
 export default {
   props: {
     buttonText: String,
+    cStyle:String,
   },
+  computed:{
+    style(){
+      return this.cStyle;
+    }
+  }
 };
 </script>
 
@@ -15,7 +21,7 @@ export default {
 .btn {
   border: 0;
   cursor: pointer;
-  /* width: 167px; */
+  font-size: 16px;
   padding: 0 58px;
   display: inline-block;
   font-family: Larsseit;
@@ -53,6 +59,7 @@ export default {
 @media only screen and (max-width: 767.5px) {
   .btn {
     width: 90px;
+    padding:0;
     font-size: 14px;
     line-height: 48px;
     border-radius: 24px;

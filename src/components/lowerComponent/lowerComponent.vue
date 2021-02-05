@@ -17,6 +17,14 @@
       <div class="trip-card d-flex space-between">
         <div class="img-container">
           <img src="@/assets/imgs/dummy-1.png" alt="" />
+          <div class="buttons-container d-flex">
+            <button class="img-controllers arrow-left"></button>
+            <button class="img-controllers arrow-right"></button>
+          </div>
+          <div class="img-brief d-flex flex-column">
+            <span class="img-number">01.</span>
+            <span class="img-title">GRAND DUNES LANDSCAPE</span>
+          </div>
         </div>
         <div class="info-container">
           <h2 class="trip-title">Chill Adventure</h2>
@@ -33,7 +41,10 @@
             lacus, dignissim pharetra ipsum blandit. Feugiat quis quam
             consectetur lectus id quis tortor vel, mattis.
           </p>
-          <c-button buttonText="SEE OUR LATEST OFFER" />
+          <c-button
+            buttonText="SEE OUR LATEST OFFER"
+            cStyle="font-size:14px;margin-top:45px"
+          />
         </div>
       </div>
     </div>
@@ -59,14 +70,14 @@ export default {
 #lowerPart::after {
   content: "";
   width: 100%;
-  min-height: calc(100% + 280px);
+  min-height: calc(100% + 260px);
   height: fill-available;
   top: 0;
   position: absolute;
   /* background-image: url(/img/bg-lights.a643be40.svg); */
   background-image: url("~@/assets/imgs/bg-lights.svg");
   display: block;
-  margin-top: -280px;
+  margin-top: -260px;
 }
 .container {
   margin: 0 auto;
@@ -89,11 +100,29 @@ export default {
   font-size: 16px;
   line-height: 150%;
   letter-spacing: -0.02em;
+  position: relative;
+}
+.sub-title::before,
+.sub-title::after {
+  content: "";
+  position: absolute;
+  left: -54px;
+  top: 50%;
+  width: 18px;
+  height: 2px;
+  background-color: #41ead4;
+  border-radius: 50px;
+}
+.sub-title::before {
+  transform: rotate(45deg);
+}
+.sub-title::after {
+  transform: rotate(-45deg);
 }
 .tabs {
   border-bottom: 2px solid rgba(65, 234, 212, 0.3);
   width: 100%;
-  margin: 83px 0 130px;
+  margin: 83px 0 150px;
   list-style-type: none;
   padding-left: 0;
 }
@@ -122,6 +151,18 @@ export default {
 .img-container {
   max-width: 486px;
   width: 100%;
+  position: relative;
+  border-radius: 10px;
+}
+.img-container::after {
+  content: "";
+
+  position: absolute;
+  bottom: -55px;
+  left: -55px;
+  width: 230px;
+  height: 230px;
+  background-image: url("~@/assets/imgs/dots.png");
 }
 .trip-card {
   max-width: 1049px;
@@ -129,6 +170,9 @@ export default {
 }
 .img-container img {
   width: 100%;
+  height: 100%;
+  z-index: 2;
+  position: relative;
 }
 .info-container {
   max-width: 439px;
@@ -146,5 +190,69 @@ export default {
   line-height: 150%;
   letter-spacing: -0.02em;
   margin: 0;
+}
+.buttons-container {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.img-controllers {
+  width: 65px;
+  height: 65px;
+  display: inline-block;
+  z-index: 3;
+  border: 0;
+  background: #011627;
+  box-shadow: -10px 14px 24px rgba(1, 22, 39, 0.08);
+}
+.img-controllers:hover {
+  cursor: pointer;
+}
+.img-controllers.arrow-right,
+.img-controllers.arrow-left {
+  background-image: url("~@/assets/imgs/arrow.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: all 0.1s;
+}
+.img-controllers.arrow-left {
+  transform: rotate(180deg);
+  border-left: 2px solid rgba(19, 49, 73, 0.5);
+  border-bottom-right-radius: 12px;
+}
+.img-controllers.arrow-right:hover,
+.img-controllers.arrow-left:hover {
+  background-position-x: 24px;
+}
+.img-brief {
+  position: absolute;
+  top: 50%;
+  left: -50%;
+  transform: translate(75%, -50%);
+  z-index: 3;
+}
+.img-brief::before {
+  content: "";
+  position: absolute;
+  width: 172px;
+  height: 12px;
+  border-top: 2px solid #41ead4;
+  border-left: 2px solid #41ead4;
+  margin-top:-16px;
+}
+.img-number {
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 150%;
+  letter-spacing: 0.15em;
+  color: #41ead4;
+}
+.img-title {
+  display: inline-block;
+  max-width: 204px;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 150%;
+  letter-spacing: 0.15em;
 }
 </style>

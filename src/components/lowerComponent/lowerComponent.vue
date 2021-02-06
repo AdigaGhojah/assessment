@@ -244,7 +244,7 @@ export default {
   background-image: url("~@/assets/imgs/arrow.svg");
   background-repeat: no-repeat;
   background-position: center;
-  transition: all 0.1s;
+  /* transition: all 0.1s; */
 }
 .img-controllers.arrow-left {
   transform: rotate(180deg);

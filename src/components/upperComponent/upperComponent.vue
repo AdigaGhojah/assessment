@@ -146,10 +146,10 @@ h1 {
   display: inline-block;
   letter-spacing: 0.05em;
   z-index: 1;
-  animation: animation 1s infinite;
+  /* animation: animation 1s infinite; */
   position: relative;
 }
-@keyframes animation {
+/* @keyframes animation {
   0% {
     bottom: 256px;
   }
@@ -159,7 +159,7 @@ h1 {
   100% {
     bottom: 256px;
   }
-}
+} */
 .scroll::after {
   content: "";
   bottom: -27px;
@@ -208,7 +208,7 @@ h1 {
     left: -28px;
     height: 40px;
   }
-  @keyframes animation {
+  /* @keyframes animation {
     0% {
       bottom: 50px;
     }
@@ -218,6 +218,6 @@ h1 {
     100% {
       bottom: 50px;
     }
-  }
+  } */
 }
 </style>

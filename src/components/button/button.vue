@@ -36,7 +36,7 @@ export default {
   border-radius: 48px;
   text-align: center;
   position: relative;
-  transition: background-color 0.3s;
+  /* transition: background-color 0.3s; */
 }
 .btn:hover {
   background-color: #00b0c4;
@@ -52,7 +52,7 @@ export default {
   top: 50%;
   margin-top: -1px;
   right: -15px;
-  transition: right 0.3s;
+  /* transition: right 0.3s; */
   background-color: #fff;
   border-radius: 16px;
 }

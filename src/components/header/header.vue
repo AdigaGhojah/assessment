@@ -40,7 +40,7 @@ header {
   border-radius: 50%;
   border: 0;
   background-color: transparent;
-  transition: all 0.3s;
+  /* transition: all 0.3s; */
 }
 .search-button:hover {
   background-color: rgba(110, 110, 110, 0.5);
@@ -61,7 +61,7 @@ header {
   border-radius: 48px;
   text-align: center;
   position: relative;
-  transition: background-color 0.3s;
+  /* transition: background-color 0.3s; */
 }
 .menu-btn:hover {
   background-color: #00b0c4;
@@ -77,7 +77,7 @@ header {
   top: 50%;
   margin-top: -1px;
   right: -15px;
-  transition: right 0.3s;
+  /* transition: right 0.3s; */
   background-color: #fff;
   border-radius: 16px;
 }

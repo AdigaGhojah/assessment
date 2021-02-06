@@ -1,7 +1,7 @@
 <template>
   <transition name="slide">
     <div class="side-container" v-if="isOpened">
-      <sequential-entrance fromLeft>
+      <sequential-entrance fromRight>
         <a v-for="trip in myTrips" :key="trip.id" href="#">{{
           trip.tripName
         }}</a>
@@ -31,10 +31,11 @@ export default {
   max-width: 350px;
   width: 100%;
   top: 0;
+  right: 0;
   height: 100%;
   background-color: #011627;
   padding-top: 32px;
-  transition: left 0.5s;
+  transition: right 0.5s;
   z-index: 2;
 }
 .side-container a {
@@ -54,22 +55,22 @@ export default {
 }
 .slide-enter-active,
 .slide-leave-active {
-  transition: all 0.5s ease-in-out;
+  transition: right 0.5s ease-in-out;
 }
 .slide-enter-active {
-  left: -350px;
+  right: -350px;
 }
 .slide-leave-active {
-  left: 0;
+  right: 0;
 }
 
 .slide-enter-from,
 .slide-leave-to {
-  left: -350px;
+  right: -350px;
 }
 .slide-enter-to,
 .slide-leave-from {
-  left: 0;
+  right: 0;
 }
 @media only screen and (max-width: 767.5px) {
   .side-container {

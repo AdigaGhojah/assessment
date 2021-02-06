@@ -95,7 +95,7 @@ body {
 .overlay {
   content: "";
   cursor: pointer;
-  position: absolute;
+  position: fixed;
   top: 0;
   bottom: 0;
   left: 0;

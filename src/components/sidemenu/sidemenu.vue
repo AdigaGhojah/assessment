@@ -1,7 +1,13 @@
 <template>
-  <div class="side-container" :class="{ active: isOpened }">
-    <a v-for="trip in myTrips" :key="trip.id" href="#">{{ trip.tripName }}</a>
-  </div>
+  <transition name="slide">
+    <div class="side-container" v-if="isOpened">
+      <sequential-entrance fromLeft>
+        <a v-for="trip in myTrips" :key="trip.id" href="#">{{
+          trip.tripName
+        }}</a>
+      </sequential-entrance>
+    </div>
+  </transition>
 </template>
 
 <script>
@@ -21,19 +27,15 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .side-container {
-  position: absolute;
+  position: fixed;
   max-width: 350px;
   width: 100%;
-  left: -350px;
   top: 0;
   height: 100%;
   background-color: #011627;
   padding-top: 32px;
   transition: left 0.5s;
   z-index: 2;
-}
-.side-container.active {
-  left: 0;
 }
 .side-container a {
   display: block;
@@ -46,14 +48,28 @@ export default {
   text-decoration: none;
   color: #fff;
   position: relative;
-  left: -100%;
-  transition: all 0.6s;
-}
-.side-container.active a {
-  left: 0;
 }
 .side-container a:hover {
   background-color: #009eaf;
+}
+.slide-enter-active,
+.slide-leave-active {
+  transition: all 0.5s ease-in-out;
+}
+.slide-enter-active {
+  left: -350px;
+}
+.slide-leave-active {
+  left: 0;
+}
+
+.slide-enter-from,
+.slide-leave-to {
+  left: -350px;
+}
+.slide-enter-to,
+.slide-leave-from {
+  left: 0;
 }
 @media only screen and (max-width: 767.5px) {
   .side-container {

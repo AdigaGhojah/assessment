@@ -1,7 +1,7 @@
 <template>
   <header class="d-flex align-center space-between">
     <!-- Start Logo -->
-    <a href="/" title="logo">
+    <a href="/assessment/" title="logo">
       <img src="@/assets/imgs/logo.svg" alt="logo" />
     </a>
     <!-- End Logo -->

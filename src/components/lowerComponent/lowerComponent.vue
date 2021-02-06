@@ -175,13 +175,6 @@ export default {
 .sub-title::after {
   transform: rotate(-45deg);
 }
-.tabs {
-  border-bottom: 2px solid rgba(65, 234, 212, 0.3);
-  width: 100%;
-  margin: 83px 0 150px;
-  list-style-type: none;
-  padding-left: 0;
-}
 
 .img-container {
   max-width: 486px;
@@ -256,9 +249,11 @@ export default {
   border-left: 2px solid rgba(19, 49, 73, 0.5);
   border-bottom-right-radius: 12px;
 }
+@media only screen and (min-width: 1024px) {
 .img-controllers.arrow-right:hover,
 .img-controllers.arrow-left:hover {
   background-position-x: 24px;
+}
 }
 .img-brief {
   position: absolute;
@@ -345,7 +340,7 @@ export default {
     font-size: 16px;
   }
   .img-brief {
-    transform: translate(53%, -50%);
+    transform: translate(65%, -50%);
   }
   .img-brief::before {
     width: 95px;
@@ -355,6 +350,7 @@ export default {
   .img-container::after {
     width: 115px;
     height: 115px;
+    left: -51px;
   }
 }
 @media only screen and (max-width: 450px) {

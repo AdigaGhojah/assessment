@@ -122,6 +122,9 @@ span {
 
 }
 @media only screen and (max-width: 767.5px) {
+  .share-page.space-bottom {
+  bottom: 60px;
+}
   .share-page {
     bottom: 5px;
   }

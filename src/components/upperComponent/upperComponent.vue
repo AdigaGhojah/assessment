@@ -77,8 +77,12 @@ export default {
     background-size: contain;
   }
 }
+@media only screen and (min-width: 768px) {
+  #upperPart {
+    background-image: url("~@/assets/imgs/background.webp");
+  }
+}
 #upperPart {
-  background-image: url("~@/assets/imgs/background.webp");
   background-repeat: no-repeat;
   width: 100%;
   height: calc(100vh + 232px);
@@ -175,6 +179,7 @@ h1 {
 
 @media only screen and (max-width: 767.5px) {
   #upperPart {
+    background-image: url("~@/assets/imgs/mobile-background.webp");
     background-position: center;
     height: calc(100vh + 50px);
   }

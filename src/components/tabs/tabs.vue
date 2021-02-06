@@ -25,7 +25,7 @@ export default {
   methods: {
     activeTab(index) {
       this.currentActive = index;
-      this.$emit('sendActiveTrip',index)
+      this.$emit("sendActiveTrip", index);
     },
   },
 };
@@ -33,6 +33,13 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.tabs {
+  border-bottom: 2px solid rgba(65, 234, 212, 0.3);
+  width: 100%;
+  margin: 83px 0 150px;
+  list-style-type: none;
+  padding-left: 0;
+}
 .tab {
   max-width: 282px;
   width: 100%;
@@ -57,7 +64,7 @@ export default {
 }
 @media only screen and (max-width: 767.5px) {
   .tabs {
-    margin: 40px 0 75px;
+    margin: 32px 0;
   }
   .tab {
     padding-bottom: 16px;

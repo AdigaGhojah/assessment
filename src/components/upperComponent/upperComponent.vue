@@ -173,6 +173,10 @@ h1 {
 @media only screen and (max-width: 767.5px) {
   #upperPart {
     background-position: center;
+    height: calc(100vh + 50px);
+  }
+  #upperPart::after {
+    max-height: 150px;
   }
   .main-text {
     height: calc(100% - (82px + 40px + 100px));
@@ -192,7 +196,6 @@ h1 {
     font-size: 14px;
   }
   .scroll {
-    bottom: 6px;
     left: -16px;
   }
   .scroll::after {
@@ -200,18 +203,16 @@ h1 {
     left: -28px;
     height: 40px;
   }
-}
-@media only screen and (max-width: 450px) {
-@keyframes animation {
-  0% {
-    bottom: 235px;
+  @keyframes animation {
+    0% {
+      bottom: 50px;
+    }
+    50% {
+      bottom: 65px;
+    }
+    100% {
+      bottom: 50px;
+    }
   }
-  50% {
-    bottom: 250px;
-  }
-  100% {
-    bottom: 235px;
-  }
-}
 }
 </style>

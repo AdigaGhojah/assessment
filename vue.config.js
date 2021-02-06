@@ -7,7 +7,5 @@ module.exports = {
         background_color: "#42b983"
       }
     },
-    publicPath: process.env.NODE_ENV === 'production'
-    ? '/assessment/'
-    : '/'
+    publicPath: '/assessment/'
   };

@@ -1,5 +1,5 @@
 <template>
-  <a class="btn" href="#" @click="openMenu" :style="style">{{ buttonText }}</a>
+  <a class="btn" href="#" @click.prevent="openMenu" :style="style">{{ buttonText }}</a>
 </template>
 
 <script>

@@ -70,27 +70,11 @@ export default {
     return {
       myTrips: json,
       index: 0,
-      currentTrip: {
-        id: 0,
-        tripName: "Chill Adventure",
-        tripDescription1:
-          "Ornare vivamus molestie pellentesque nunc. Sed sapien erat ultrices curabitur. Erat id fringilla arcu condimentum fames.",
-        tripDescription2:
-          "Aliquet dictum aliquet faucibus cursus turpis. Suspendisse cum rutrum sit ut sociis. Pellentesque neque orci adipiscing pharetra lacus, dignissim pharetra ipsum blandit. Feugiat quis quam consectetur lectus id quis tortor vel, mattis.",
-        images: [
-          {
-            imageName: "dummy-1.webp",
-            imageTitle: "GRAND DUNES LANDSCAPE",
-            imageNumber: "01.",
-          },
-          {
-            imageName: "dummy-2.webp",
-            imageTitle: "GRAND DUNES LANDSCAPE",
-            imageNumber: "02.",
-          },
-        ],
-      },
+      currentTrip: null,
     };
+  },
+  created() {
+    this.currentTrip = this.myTrips[this.index];
   },
   methods: {
     setCurrentTrip(index) {

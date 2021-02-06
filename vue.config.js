@@ -7,5 +7,4 @@ module.exports = {
         background_color: "#42b983"
       }
     },
-    publicPath: '/assessment/'
   };

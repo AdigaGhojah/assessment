@@ -164,7 +164,7 @@ export default {
 
 .img-container {
   max-width: 486px;
-  max-height: 472px;
+  max-height: 607px;
   width: 100%;
   position: relative;
   border-radius: 10px;

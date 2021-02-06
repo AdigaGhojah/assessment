@@ -74,8 +74,12 @@ export default {
     background-size: contain;
   }
 }
+@media only screen and (min-width: 768px) {
+  #upperPart {
+    background-image: url("~@/assets/imgs/background.png");
+  }
+}
 #upperPart {
-  background-image: url("~@/assets/imgs/background.png");
   background-repeat: no-repeat;
   width: 100%;
   height: calc(100vh + 232px);
@@ -172,6 +176,7 @@ h1 {
 
 @media only screen and (max-width: 767.5px) {
   #upperPart {
+    background-image: url("~@/assets/imgs/mobile-background.png");
     background-position: center;
   }
   .main-text {
@@ -202,16 +207,16 @@ h1 {
   }
 }
 @media only screen and (max-width: 450px) {
-@keyframes animation {
-  0% {
-    bottom: 235px;
+  @keyframes animation {
+    0% {
+      bottom: 235px;
+    }
+    50% {
+      bottom: 250px;
+    }
+    100% {
+      bottom: 235px;
+    }
   }
-  50% {
-    bottom: 250px;
-  }
-  100% {
-    bottom: 235px;
-  }
-}
 }
 </style>

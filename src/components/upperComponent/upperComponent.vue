@@ -2,7 +2,7 @@
   <div id="upperPart">
     <div class="container">
       <!-- Start Header -->
-      <cHeader />
+      <cHeader @openMenu="openMenu" />
       <!-- End Header -->
       <!-- Start Main Text -->
       <section class="main-text d-flex align-center flex-column">
@@ -57,6 +57,9 @@ export default {
 
       this.lastPosition = window.scrollY;
     },
+    openMenu(){
+      this.$emit("openMenu");
+    }
   },
   created() {
     window.addEventListener("scroll", this.handleScroll);

@@ -1,19 +1,33 @@
 <template>
   <div id="app">
-    <upper-component />
+    <upper-component @openMenu="openMenu" />
     <lower-component />
+    <sidemenu :isOpened="isOpened" />
+    <span class="overlay" v-if="isOpened" @click="openMenu"></span>
   </div>
 </template>
 
 <script>
 import LowerComponent from "./components/lowerComponent/lowerComponent.vue";
+import Sidemenu from "./components/sidemenu/sidemenu.vue";
 import upperComponent from "./components/upperComponent/upperComponent.vue";
 
 export default {
   name: "App",
+  data() {
+    return {
+      isOpened: false,
+    };
+  },
   components: {
     upperComponent,
     LowerComponent,
+    Sidemenu,
+  },
+  methods: {
+    openMenu() {
+      this.isOpened = !this.isOpened;
+    },
   },
 };
 </script>
@@ -54,7 +68,7 @@ body {
   font-display: swap;
 }
 
-.flex-wrap{
+.flex-wrap {
   flex-wrap: wrap;
 }
 .space-between {
@@ -77,5 +91,19 @@ body {
 }
 .d-inline {
   display: inline;
+}
+.overlay {
+  content: "";
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #000;
+  opacity: 0.5;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
 }
 </style>

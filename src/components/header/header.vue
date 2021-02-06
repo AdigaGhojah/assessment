@@ -10,7 +10,7 @@
       <button class="search-button">
         <img src="@/assets/imgs/search-icon.svg" alt="search-icon" />
       </button>
-      <c-button buttonText="MENU"/>
+      <c-button @openMenu="openMenu" buttonText="MENU"/>
     </div>
     <!-- End Header Right Side-->
   </header>
@@ -22,6 +22,11 @@ export default {
     components: {
     cButton,
   },
+  methods:{
+    openMenu(){
+      this.$emit("openMenu");
+    }
+  }
 };
 </script>
 

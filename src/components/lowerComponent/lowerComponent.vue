@@ -2,7 +2,7 @@
   <div id="lowerPart">
     <div class="container">
       <div class="d-flex align-center flex-wrap">
-        <h3 class="section-title">Pick your trip</h3>
+        <h2 class="section-title">Pick your trip</h2>
         <p class="sub-title">
           Our team put together some trips to you to discover, feel free to
           discover each of them.
@@ -14,10 +14,12 @@
           <img :src="getImgUrl(currentTrip.images[index].imageName)" alt="" />
           <div class="buttons-container d-flex">
             <button
+              aria-label="arrow left"
               @click="changeSlide('prev')"
               class="img-controllers arrow-left"
             ></button>
             <button
+              aria-label="arrow right"
               @click="changeSlide('next')"
               class="img-controllers arrow-right"
             ></button>
@@ -32,7 +34,7 @@
           </div>
         </div>
         <div class="info-container">
-          <h2 class="trip-title">{{ currentTrip.tripName }}</h2>
+          <h3 class="trip-title">{{ currentTrip.tripName }}</h3>
           <p class="trip-description">
             <b> {{ currentTrip.tripDescription1 }}</b>
           </p>
@@ -250,10 +252,10 @@ export default {
   border-bottom-right-radius: 12px;
 }
 @media only screen and (min-width: 1024px) {
-.img-controllers.arrow-right:hover,
-.img-controllers.arrow-left:hover {
-  background-position-x: 24px;
-}
+  .img-controllers.arrow-right:hover,
+  .img-controllers.arrow-left:hover {
+    background-position-x: 24px;
+  }
 }
 .img-brief {
   position: absolute;
@@ -340,7 +342,8 @@ export default {
     font-size: 16px;
   }
   .img-brief {
-    transform: translate(65%, -50%);
+    transform: translate(0, -50%);
+    margin-left: 43%;
   }
   .img-brief::before {
     width: 95px;

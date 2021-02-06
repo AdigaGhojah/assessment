@@ -1,5 +1,5 @@
 <template>
-  <a class="btn" :style="style">{{ buttonText }}</a>
+  <a class="btn" href="#" :style="style">{{ buttonText }}</a>
 </template>
 
 <script>

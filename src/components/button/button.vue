@@ -1,5 +1,5 @@
 <template>
-  <a class="btn" href="#" :style="style">{{ buttonText }}</a>
+  <a class="btn" href="#" @click="openMenu" :style="style">{{ buttonText }}</a>
 </template>
 
 <script>
@@ -11,6 +11,11 @@ export default {
   computed:{
     style(){
       return this.cStyle;
+    }
+  },
+  methods:{
+    openMenu(){
+      this.$emit("openMenu");
     }
   }
 };
@@ -24,9 +29,7 @@ export default {
   font-size: 16px;
   padding: 0 58px;
   display: inline-block;
-  font-family: Larsseit;
   font-weight: bold;
-  font-size: 16px;
   line-height: 60px;
   letter-spacing: 0.1em;
   background-color: #00c9e0;

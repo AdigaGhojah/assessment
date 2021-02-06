@@ -37,6 +37,7 @@ export default {
   text-align: center;
   position: relative;
   transition: background-color 0.3s;
+  text-decoration: none;
 }
 .btn:hover {
   background-color: #00b0c4;

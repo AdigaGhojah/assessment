@@ -75,7 +75,7 @@ export default {
   }
 }
 #upperPart {
-  background-image: url("~@/assets/imgs/background.png");
+  background-image: url("~@/assets/imgs/background.webp");
   background-repeat: no-repeat;
   width: 100%;
   height: calc(100vh + 232px);

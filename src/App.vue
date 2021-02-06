@@ -2,19 +2,16 @@
   <div id="app">
     <upper-component />
     <lower-component />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
 import LowerComponent from "./components/lowerComponent/lowerComponent.vue";
 import upperComponent from "./components/upperComponent/upperComponent.vue";
 
 export default {
   name: "App",
   components: {
-    HelloWorld,
     upperComponent,
     LowerComponent,
   },

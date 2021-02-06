@@ -77,12 +77,12 @@ export default {
           "Aliquet dictum aliquet faucibus cursus turpis. Suspendisse cum rutrum sit ut sociis. Pellentesque neque orci adipiscing pharetra lacus, dignissim pharetra ipsum blandit. Feugiat quis quam consectetur lectus id quis tortor vel, mattis.",
         images: [
           {
-            imageName: "dummy-1.png",
+            imageName: "dummy-1.webp",
             imageTitle: "GRAND DUNES LANDSCAPE",
             imageNumber: "01.",
           },
           {
-            imageName: "dummy-2.jpg",
+            imageName: "dummy-2.webp",
             imageTitle: "GRAND DUNES LANDSCAPE",
             imageNumber: "02.",
           },

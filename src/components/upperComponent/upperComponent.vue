@@ -76,7 +76,7 @@ export default {
 }
 @media only screen and (min-width: 768px) {
   #upperPart {
-    background-image: url("~@/assets/imgs/background.png");
+    background-image: url("~@/assets/imgs/background.webp");
   }
 }
 #upperPart {
@@ -176,7 +176,7 @@ h1 {
 
 @media only screen and (max-width: 767.5px) {
   #upperPart {
-    background-image: url("~@/assets/imgs/mobile-background.png");
+    background-image: url("~@/assets/imgs/mobile-background.webp");
     background-position: center;
   }
   .main-text {

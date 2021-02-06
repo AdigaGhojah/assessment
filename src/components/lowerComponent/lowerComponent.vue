@@ -188,6 +188,7 @@ export default {
   height: 100%;
   z-index: 2;
   position: relative;
+  border-radius: 10px;
 }
 .info-container {
   max-width: 439px;
